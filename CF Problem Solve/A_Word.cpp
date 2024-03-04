@@ -5,35 +5,47 @@ int main()
 {
     string s;
     cin >> s;
-    int countup = 0, countlow = 0;
+    int up = 0, low = 0;
     for (int i = 0; i < s.size(); i++)
     {
         if (isupper(s[i]))
-        {
-            countup++;
-        }
+            up++;
         else
-        {
-            countlow++;
-        }
+            low++;
     }
-    if (countup > countlow)
+    // cout<<up<<" "<<low;
+    if (up == low)
     {
-        char ch;
         for (int i = 0; i < s.size(); i++)
         {
-            ch = toupper(s[i]);
-            cout << ch;
+            s[i] = tolower(s[i]);
         }
+        cout << s << endl;
     }
-    else
+    else if (up < low)
     {
-        char ch;
         for (int i = 0; i < s.size(); i++)
         {
-            ch = tolower(s[i]);
-            cout << ch;
+            s[i] = tolower(s[i]);
         }
+        cout << s << endl;
     }
+    else if (up > low)
+    {
+        for (int i = 0; i < s.size(); i++)
+        {
+            s[i] = toupper(s[i]);
+        }
+        cout << s << endl;
+    }
+    else if (up == low)
+    {
+        for (int i = 0; i < s.size(); i++)
+        {
+            s[i] = tolower(s[i]);
+        }
+        cout << s << endl;
+    }
+
     return 0;
 }
