@@ -1,38 +1,40 @@
-#include <iostream>
+/**
+ * author: Md Rakibul Hasan
+ * date: 2024-03-23 02:41:20
+ **/
 
+#include <bits/stdc++.h>
 using namespace std;
 
-bool isPrime(int n) {
-    if (n <= 1) {
-        return false;
-    }
-    if (n <= 3) {
-        return true;
-    }
-    if (n % 2 == 0 || n % 3 == 0) {
-        return false;
-    }
-    for (int i = 5; i * i <= n; i += 6) {
-        if (n % i == 0 || n % (i + 2) == 0) {
-            return false;
-        }
-    }
-    return true;
-}
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-int main() {
-    int T;
-    cin >> T;
+    int T, N;
+    cin >> T; // Read the number of test cases
 
-    while (T--) {
-        int N;
+    while (T--)
+    {
         cin >> N;
 
-        if (isPrime(N)) {
-            cout << "YES" << endl;
-        } else {
+        if (N <= 1)
+        {
             cout << "NO" << endl;
+            continue;
         }
+        int limit = sqrt(N);
+        bool isPrime = true;
+        for (int i = 2; i <= limit; ++i)
+        {
+            if (N % i == 0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+
+        cout << (isPrime ? "YES" : "NO") << endl;
     }
 
     return 0;
