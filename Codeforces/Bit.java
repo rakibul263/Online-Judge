@@ -15,7 +15,7 @@ public class Bit {
             }
             else if (str == "X--") {
                 X--;
-            }
+            } 
             else if (str == "--X") {
                 --X;
             }
