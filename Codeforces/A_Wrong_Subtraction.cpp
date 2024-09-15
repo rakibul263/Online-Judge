@@ -1,6 +1,6 @@
 /***************************************
 Author: Md Rakibul Hasan
-date: 2024-09-07 02:21:44
+date: 2024-09-14 02:09:44
 ****************************************/
 
 #include <bits/stdc++.h>
@@ -11,18 +11,20 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int t;
-    cin >> t;
-    while (t--)
+    long long n, k;
+    cin >> n >> k;
+    for (int i = 0; i < k; i++)
     {
-        string str;
-        cin >> str;
-        int len = str.length();
-        if (len <= 10)
-            cout << str << endl;
+        if (n % 10 != 0)
+        {
+            n -= 1;
+        }
         else
-            cout << str.front() << len - 2 << str.back() << endl;
+        {
+            n /= 10;
+        }
     }
+    cout << n << endl;
 
     return 0;
 }
