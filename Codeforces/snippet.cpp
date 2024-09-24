@@ -8,7 +8,9 @@ using namespace std;
 #define int            long long int
 #define double         long double
 #define endl           "\n"
-
+#define pb             push_back
+#define vi             vector<int>
+#define print(a)       for(auto x : a) cout << x << " "; cout << endl
 
 void solve(){
 
