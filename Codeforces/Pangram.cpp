@@ -34,8 +34,23 @@ clock_on
     // cin>>t;
     while(t--) solve();
 
+    int n;
+    cin>>n;
+    string str;
+    cin>>str;
 
-    cout<<"Luna"<<endl;
+    set<char>st;
+    for(char ch : str){
+        char c = (char)tolower(ch);
+        st.insert(c);
+    }
+
+    // cout<<st.size()<<endl;
+
+    if(st.size() == 26)
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
 
 clock_off
 
