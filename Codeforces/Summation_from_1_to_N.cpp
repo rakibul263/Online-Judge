@@ -15,15 +15,11 @@ using namespace std;
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
 
 void solve(){
-    int n;
+    long long n;
     cin>>n;
-    int sum = 0;
-    while(n>0){
-        sum+=n;
-        n--;
-    }
-    cout<<sum<<endl;
 
+    long long re = n*(n+1)/2;
+    cout<<re<<endl;
 }
 
 /*****Main Function*****/
