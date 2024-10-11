@@ -16,17 +16,23 @@ using namespace std;
 
 void solve(){
 
-    float a, b;
-    cin>>a>>b;
+    float X, Y;
+    cin>>X>>Y;
 
-    if(a>=0 && b>=0)
-        cout<<"Q1"<<endl;
-    else if(a<0 && b>=0)
-        cout<<"Q2"<<endl;
-    else if(a<0 && b<0)
-        cout<<"Q3"<<endl;
+     if (X == 0 && Y == 0)
+        cout << "Origem" << endl;
+    else if (X == 0)
+        cout << "Eixo Y" << endl;
+    else if (Y == 0)
+        cout << "Eixo X" << endl;
+    else if (X > 0 && Y > 0)
+        cout << "Q1" << endl;
+    else if (X < 0 && Y > 0)
+        cout << "Q2" << endl;
+    else if (X < 0 && Y < 0)
+        cout << "Q3" << endl;
     else
-        cout<<"Q4"<<endl;
+        cout << "Q4" << endl;
 
 }
 
