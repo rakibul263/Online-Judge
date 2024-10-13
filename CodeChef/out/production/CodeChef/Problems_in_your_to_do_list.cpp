@@ -15,7 +15,21 @@ using namespace std;
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
 
 void solve(){
+    int n;
+        cin >> n;
 
+        vector<int> difficulties(n);
+        for (int i = 0; i < n; i++) {
+            cin >> difficulties[i];
+        }
+
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (difficulties[i] >= 1000) {
+                count++;
+            }
+        }
+        cout << count << endl;
 }
 
 /*****Main Function*****/
@@ -31,22 +45,10 @@ int32_t main(){
 clock_on
 
     int t = 1;
-    // cin>>t;
+    cin>>t;
     while(t--) solve();
 
-    int n;
-    cin>>n;
-    vi(arr);
 
-    for(int i=0;i<n;i++){
-        int x;
-        cin>>x;
-        arr.push_back(x);
-    }
-
-    reverse(arr.begin(), arr.end());
-
-    print(arr);
 
 
 clock_off
