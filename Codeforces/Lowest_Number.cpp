@@ -13,19 +13,21 @@ using namespace std;
 #define pb             push_back
 #define vi             vector<int>
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
-#define arr_in(n)      int arr[n]; for(int i=0;i<n;i++) cin>>arr[i];
+#define arr_in(n)      int arr[n];  for(int i=0;i<n;i++) cin>>arr[i];
 #define lp(n)          for(int i=0;i<n;i++)
 
 void solve(){
-    int n;
-    cin>>n;
-    arr_in(n);
-
+    int n;   cin>>n; 
+    arr_in(n)
+    int min = INT_MAX;
+    int index;
     lp(n){
-        if(arr[i]<=10){
-            cout<<"A["<<i<<"] = "<<arr[i]<<endl;
+        if(arr[i]<min){
+            min = arr[i];
+            index = i;
         }
     }
+    cout<<min<<" "<<index+1<<endl;
 }
 
 /*****Main Function*****/
