@@ -13,21 +13,24 @@ using namespace std;
 #define pb             push_back
 #define vi             vector<int>
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
-#define arr_in(n)      int arr[n];  for(int i=0;i<n;i++) cin>>arr[i];
-#define lp(n)          for(int i=0;i<n;i++)
+#define arr_in(n)      int n; cin>>n; int arr[n]; for(int i=0;i<n;i++) cin>>arr[i];
+#define lpi(n)          for(int i=0;i<n;i++)
+#define lpj(n)          for(int j=0;j<n;j++)
+#define swp(i,j)        swap(arr[i], arr[j]);
 
 void solve(){
-    int n;   cin>>n; 
-    arr_in(n)
-    int min = INT_MAX;
-    int index;
-    lp(n){
-        if(arr[i]<min){
-            min = arr[i];
-            index = i;
+    arr_in(n);
+    for(int i=0;i<n-1;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]>arr[j]){
+                swp(i,j)
+            }
         }
     }
-    cout<<min<<" "<<index+1<<endl;
+    lpi(n){
+        cout<<arr[i]<<" ";
+    }
+    
 }
 
 /*****Main Function*****/
@@ -45,6 +48,7 @@ clock_on
     int t = 1;
     // cin>>t;
     while(t--) solve();
+
 
 
 clock_off
