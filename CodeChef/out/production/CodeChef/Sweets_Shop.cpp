@@ -14,35 +14,15 @@ using namespace std;
 #define vi             vector<int>
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
 
-void multiply(vector<int> &ans, int x) {
-    int carry = 0;
-    for (int i = 0; i < ans.size(); i++) {
-        int p = ans[i] * x + carry;
-        ans[i] = p % 10;  
-        carry = p / 10; 
-    }
-    while (carry) {
-        ans.push_back(carry % 10);
-        carry /= 10;
-    }
-}
-
-void large_factorial(int n) {
-    vector<int> ans(1, 1);
-    for (int i = 2; i <= n; i++) {
-        multiply(ans, i); 
-    }
-    
-    for (int i = ans.size() - 1; i >= 0; i--) {
-        cout << ans[i];
-    }
-    cout << endl;
-}
-
 void solve(){
-    int n;
-    cin>>n;
-    large_factorial(n); 
+
+    int x, n;
+    cin>>x>>n;
+
+    int rem_money = x-(n*10);
+    int ans = rem_money/20;
+
+    cout<<ans<<endl;
 }
 
 /*****Main Function*****/
@@ -58,8 +38,10 @@ int32_t main(){
 clock_on
 
     int t = 1;
-    cin>>t;
+    // cin>>t;
     while(t--) solve();
+
+
 
 clock_off
 
