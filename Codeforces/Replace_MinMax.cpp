@@ -17,26 +17,24 @@ using namespace std;
 #define lp(n)          for(int i=0;i<n;i++)
 
 void solve(){
-    int n;
-        cin >> n;
-        vector<int> a(n);
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
+    arr_in(n);
+    int min = INT_MAX;
+    int index_min, index_max;
+    int max = INT_MIN;
+    lp(n){
+        if(arr[i]>max){
+            max = arr[i];
+            index_max = i;
         }
-        vector<int> result;
-        for (int i = 0; i < n; i++) {
-            int max_value = a[i];
-            for (int j = i; j < n; j++) {
-                max_value = max(max_value, a[j]);
-                result.push_back(max_value);
-            }
+        if(arr[i]<min){
+            min = arr[i];
+            index_min = i;
         }
-        for (int k = 0; k < result.size(); k++) {
-            cout << result[k] << " ";
-        }
-        cout << endl;
+    }
+    swap(arr[index_max], arr[index_min]);
+    lp(n)
+        cout<<arr[i]<<" ";
 }
-
 
 /*****Main Function*****/
 int32_t main(){
@@ -51,7 +49,7 @@ int32_t main(){
 clock_on
 
     int t = 1;
-    cin>>t;
+    // cin>>t;
     while(t--) solve();
 
 
