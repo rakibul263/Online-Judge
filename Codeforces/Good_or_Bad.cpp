@@ -1,42 +1,33 @@
-/***** Preprocessor Directive *****/
 #include<bits/stdc++.h>
-
 using namespace std;
 
-/***** Macros -> Symbolic Constants *****/
 #define fast_io        ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define clock_on       clock_t z = clock();
 #define clock_off      z = clock() - z;  cerr << "Run Time : " << static_cast<double>(z) / CLOCKS_PER_SEC << " seconds" << endl;
 #define int            long long int
-#define double         long double
 #define endl           "\n"
-#define pb             push_back
-#define vi             vector<int>
-#define print(a)       for(auto x : a) cout << x << " "; cout << endl
-#define arr_in(n)      int arr[n]; for(int i=0;i<n;i++) cin>>arr[i];
-#define lp(n)          for(int i=0;i<n;i++)
 
 void solve(){
     string s;
-    cin>>s;
+    cin >> s;
     bool flag = false;
-    for(int i=0;i<s.size();i++){
-        for(int j=i;j<s.size()-2;j++){
-            if(s[j]== '0' && s[j+1] == '1' && s[j+2] == '0' || s[j] == '1' && s[j+1] == '0' && s[j+2] == '1'){
-                flag = true;
-                break;
-            }
+
+    //O(n) solution
+    for (int i = 0; i < s.size() - 2; i++) {
+        if ((s[i] == '0' && s[i + 1] == '1' && s[i + 2] == '0') ||
+            (s[i] == '1' && s[i + 1] == '0' && s[i + 2] == '1')) {
+            flag = true;
+            break;
         }
     }
-    if(flag)
-        cout<<"Good"<<endl;
+
+    if (flag)
+        cout << "Good" << endl;
     else
-        cout<<"Bad"<<endl;
+        cout << "Bad" << endl;
 }
 
-/*****Main Function*****/
 int32_t main(){
-
     fast_io
 
 #ifndef ONLINE_JUDGE
@@ -44,15 +35,13 @@ int32_t main(){
     freopen("output.txt", "w", stdout);
 #endif
 
-clock_on
+    clock_on
 
     int t = 1;
-    cin>>t;
+    cin >> t;
     while(t--) solve();
 
-
-
-clock_off
+    clock_off
 
     return 0;
 }
