@@ -13,11 +13,22 @@ using namespace std;
 #define pb             push_back
 #define vi             vector<int>
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
+#define arr_in(n)      int arr[n]; for(int i=0;i<n;i++) cin>>arr[i];
+#define lp(n)          for(int i=0;i<n;i++)
+
+void equation(int x, int n){
+    int ans = 0;
+    for(int i=2; i<=n; i+=2){
+        ans += pow(x, i);
+    }
+    cout << ans << endl;
+}
 
 void solve(){
-    int n;
-    cin>>n;
-    cout<<n<<endl;
+    int x, n;
+    cin >> x >> n;
+
+    equation(x, n);
 }
 
 /*****Main Function*****/
@@ -35,7 +46,6 @@ clock_on
     int t = 1;
     // cin>>t;
     while(t--) solve();
-
 
 
 

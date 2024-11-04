@@ -13,11 +13,22 @@ using namespace std;
 #define pb             push_back
 #define vi             vector<int>
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
+#define arr_in(n)      int arr[n]; for(int i=0;i<n;i++) cin>>arr[i];
+#define lp(n)          for(int i=0;i<n;i++)
 
 void solve(){
     int n;
     cin>>n;
-    cout<<n<<endl;
+    int arr[n];
+    int Max = INT_MIN, Min = INT_MAX;
+    lp(n) cin>>arr[i];
+
+    lp(n){
+        Max = max(Max, arr[i]);
+        Min = min(Min, arr[i]);
+    }
+
+    cout<<Min<<" "<<Max<<endl;
 }
 
 /*****Main Function*****/
@@ -35,7 +46,6 @@ clock_on
     int t = 1;
     // cin>>t;
     while(t--) solve();
-
 
 
 

@@ -13,11 +13,20 @@ using namespace std;
 #define pb             push_back
 #define vi             vector<int>
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
+#define arr_in(n)      int arr[n]; for(int i=0;i<n;i++) cin>>arr[i];
+#define lp(n)          for(int i=0;i<n;i++)
 
 void solve(){
     int n;
     cin>>n;
-    cout<<n<<endl;
+    double arr[n];
+    double sum = 0.0;
+    lp(n){
+        cin>>arr[i];
+        sum += arr[i];
+    }
+
+    cout<<fixed<<setprecision(6)<<sum/n<<endl;
 }
 
 /*****Main Function*****/
@@ -35,7 +44,6 @@ clock_on
     int t = 1;
     // cin>>t;
     while(t--) solve();
-
 
 
 
