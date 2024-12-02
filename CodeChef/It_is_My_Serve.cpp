@@ -21,9 +21,9 @@ void solve(){
     cin >> p >> q;
     int total_points = p + q;
     if ((total_points / 2) % 2 == 0)
-        cout << "alice" << endl;
+        cout << "Alice" << endl;
     else 
-        cout << "bob" << endl;
+        cout << "Bob" << endl;
 }
 
 /*****Main Function*****/
