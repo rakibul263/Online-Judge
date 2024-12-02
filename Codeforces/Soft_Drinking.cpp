@@ -17,13 +17,20 @@ using namespace std;
 #define lp(n)          for(int i=0;i<n;i++)
 
 void solve(){
-    int x1, x2, x3;
-    cin >> x1 >> x2 >> x3;
-    int positions[] = {x1, x2, x3};
-    sort(positions, positions + 3);
-    int median = positions[1];
-    int total_distance = abs(x1 - median) + abs(x2 - median) + abs(x3 - median);
-    cout << total_disStance << endl;
+    int n, k, l, c, d, p, nl, np;
+    cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+
+    int totalDrink = k * l;
+    int totalSlices = c * d;
+    int totalSalt = p;
+
+    int toastsByDrink = totalDrink / nl;
+    int toastsBySlices = totalSlices;
+    int toastsBySalt = totalSalt / np;
+
+    int maxToasts = min({toastsByDrink, toastsBySlices, toastsBySalt}) / n;
+
+    cout << maxToasts << endl;
 }
 
 /*****Main Function*****/
