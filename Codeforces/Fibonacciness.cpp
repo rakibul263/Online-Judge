@@ -14,8 +14,30 @@ using namespace std;
 #define vi             vector<int>
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
 
-void solve(){
+int calculateFibonacciness(int a1, int a2, int a3, int a4, int a5) {
+    int count = 0;
+    if (a3 == a1 + a2) count++;
+    if (a4 == a2 + a3) count++;
+    if (a5 == a3 + a4) count++;
+    return count;
+}
 
+
+void solve(){
+    int a1, a2, a4, a5;
+    cin >> a1 >> a2 >> a4 >> a5;
+
+    int maxFibonacciness = 0;
+
+    int possible_a3_1 = a4 - a2;
+    int possible_a3_2 = a5 - a4;
+
+    maxFibonacciness = max(maxFibonacciness, calculateFibonacciness(a1, a2, possible_a3_1, a4, a5));
+    maxFibonacciness = max(maxFibonacciness, calculateFibonacciness(a1, a2, possible_a3_2, a4, a5));
+
+    maxFibonacciness = max(maxFibonacciness, calculateFibonacciness(a1, a2, a1 + a2, a4, a5));
+
+    cout << maxFibonacciness << endl;
 }
 
 /*****Main Function*****/
@@ -31,7 +53,7 @@ int32_t main(){
 clock_on
 
     int t = 1;
-    // cin>>t;
+    cin>>t;
     while(t--) solve();
 
 
