@@ -14,30 +14,32 @@ using namespace std;
 #define vi             vector<int>
 #define print(a)       for(auto x : a) cout << x << " "; cout << endl
 
-int calculateFibonacciness(int a1, int a2, int a3, int a4, int a5) {
-    int count = 0;
-    if (a3 == a1 + a2) count++;
-    if (a4 == a2 + a3) count++;
-    if (a5 == a3 + a4) count++;
-    return count;
-}
-
-
 void solve(){
-    int a1, a2, a4, a5;
-    cin >> a1 >> a2 >> a4 >> a5;
+    int a1, a2, a3, a4, a5;
+    cin>>a1>>a2>>a4>>a5;
 
-    int maxFibonacciness = 0;
+    int a31 = a1 + a2;
+    int a32 = a4 - a2;
+    int a33 = a5 - a4;
 
-    int possible_a3_1 = a4 - a2;
-    int possible_a3_2 = a5 - a4;
+    int count = 1;
 
-    maxFibonacciness = max(maxFibonacciness, calculateFibonacciness(a1, a2, possible_a3_1, a4, a5));
-    maxFibonacciness = max(maxFibonacciness, calculateFibonacciness(a1, a2, possible_a3_2, a4, a5));
+    if(a31 == a32){
+        count++;
+        if(a32 == a33){
+            count++;
+        }else{
+            count = 2;
+        }
+    }else if(a31 == a33){
+        count++;
+    }else if(a32 == a33){
+        count++;
+    }else{
+        count=1;
+    }
 
-    maxFibonacciness = max(maxFibonacciness, calculateFibonacciness(a1, a2, a1 + a2, a4, a5));
-
-    cout << maxFibonacciness << endl;
+    cout<<count<<endl;
 }
 
 /*****Main Function*****/
